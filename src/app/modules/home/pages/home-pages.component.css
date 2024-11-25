@@ -1,0 +1,91 @@
+/* Estilos para el elemento header, expandido a toda la pantalla */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background: linear-gradient(to bottom, #3c3b3f, #605c5d);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Ocupa toda la pantalla */
+.menu {
+  position: fixed;
+  top: 70px; /* Ajuste según la altura del header */
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 70px); /* Resta la altura del header */
+  background-color: #f4f4f4; /* Color de fondo del menú */
+  overflow-y: auto;
+  padding: 20px;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid rgb(255, 255, 255);
+}
+
+/* Transición para cuando el menú está expandido */
+.menu--large {
+  width: 100%;
+  margin-left: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Iconos en el header */
+.icon {
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.icon--size {
+  font-size: 1.5rem;
+  margin-right: 20px;
+  transition: color 0.3s ease;
+}
+
+.icon:hover {
+  color: #df1919;
+  cursor: pointer;
+}
+
+/* Botón de Redirección */
+.auth-button-redirect {
+  background-color: #df1919;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 0.5em 1.5em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.3s;
+}
+
+.auth-button-redirect:hover {
+  background-color: #b01717;
+}
+
+/* Responsivo para pantallas pequeñas */
+@media (max-width: 768px) {
+  .header {
+    padding: 0 10px;
+    height: 60px;
+  }
+
+  .menu {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .auth-button-redirect {
+    font-size: 12px;
+    padding: 0.3em 1em;
+  }
+}

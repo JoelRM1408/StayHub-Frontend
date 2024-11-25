@@ -1,0 +1,277 @@
+/* Contenedor principal */
+
+input, textarea, label, select, a, button {
+  font-family: 'Karla', sans-serif;
+}
+
+
+label{
+  color:#1C4786;
+  font-weight: bold;
+}
+
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  background: #ffffff;
+  overflow: hidden;
+}
+.header{
+  width: 100%;
+  height: 10%;
+  background: #3E6FAF;
+}
+.cont2{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+}
+
+.logoheader{
+  padding: 10px;
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+  display: flex;
+  height: 100%;
+}
+#imgheaeder{
+  width: 10%;
+}
+#imglogin{
+  width: 100%;
+}
+
+.info-panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:70% ;
+  padding: 0;
+}
+
+.container-panel{
+  width: 40%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.info-content {
+  position: relative;
+  left: 5%;
+  color: #ffffff;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  overflow: hidden;
+  clip-path: polygon(0 0, 60% 0, 75% 15%, 90% 30%, 100% 50%, 100% 100%, 0 100%);
+
+}
+
+.info-image {
+  width: 900px;
+  margin-bottom: 10px;
+  animation: logoBreath 5s ease-in-out infinite;
+}
+
+@keyframes logoBreath {
+  0%, 100% { transform: scale(1.02); }
+  50% { transform: scale(1.05); }
+}
+
+.overlay-image {
+  position: absolute;
+  top: 180px;
+  left: 70%;
+  transform: translateX(-50%);
+  width: 300px;
+  opacity: 0;
+  animation: toggleImages 10s infinite;
+}
+
+.image-1 {
+  animation-delay: 0s;
+}
+
+.image-2 {
+  animation-delay: 5s;
+}
+
+@keyframes toggleImages {
+  0%, 45% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+/* Panel derecho con formulario */
+.form-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background:#fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  width: 80%;
+  height: 85%;
+  border-radius: 25px;
+}
+
+.tab{
+  display: flex;
+  width: 75%;
+  position: sticky;
+  top: 0;
+
+}
+.tab button {
+  width: 100%;
+  padding: 10px;
+  cursor: pointer;
+  background-color: lightgrey;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+#buttonlogin{
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+#buttonregister{
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.logo {
+  width: 60%;
+  height: 30%;
+  margin-bottom: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#imgstayhub{
+  width: 65%;
+}
+.tab .active {
+  background-color: #1C4786; /* Color del botón seleccionado */
+  color: white;
+}
+#buttoregister .active {
+  background-color: #1C4786; /* Color del botón seleccionado */
+  color: white;
+}
+
+.auth-form {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 10px;
+  align-items: center;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.7);
+  color: #333;
+  outline: none;
+  padding-right: 40px;
+}
+.form-group{
+  width: 100%;
+}
+.form-group1 input {
+  width: 100%;
+  height: 90%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.7);
+  color: #333;
+  outline: none;
+  padding-right: 40px;
+}
+.form-group1{
+  width: 100%;
+
+}
+.verpassword {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.ojito {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+}
+
+.forgot-password {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #1C4786;
+}
+
+.submit-btn {
+  background: #0A4A7E;
+  color: white;
+  padding: 10px;
+  width: 100%;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+.guest-button-container {
+  width: 44%;
+  height: 7%;
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.guest-access-btn {
+  background: #1976d2;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  justify-content: center;
+}
+
+
+.guest-access-btn {
+  background: #015c2e00;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espacio entre la imagen y el texto */
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.guest-access-btn:hover {
+  background: #ffffff;
+  color: rgb(0, 0, 0);
+
+  transform: translateY(-2px);
+}
+
+.button-icon {
+  width: 40px; /* Ajusta el tamaño de la imagen según lo necesites */
+  height: 40px;
+}
+

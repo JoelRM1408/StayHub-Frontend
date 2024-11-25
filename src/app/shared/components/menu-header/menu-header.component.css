@@ -1,0 +1,235 @@
+header {
+  font-family: 'Karla', sans-serif;
+}
+
+
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10%;
+  background: #ffff;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 2;
+  transition: all 0.3s ease-in-out;
+}
+
+.logo {
+  display: flex;
+  width: 20%;
+  height: 60%;
+  margin-right: 0px;
+  object-fit: cover;
+}
+.menu-container {
+  display: flex;
+  width: 72%;
+}
+
+
+
+.icon {
+  display: flex;
+  align-items: center;
+  color: #1976d2;
+  width: 3%;
+}
+
+.icon--size {
+  font-size: 1.5rem;
+  margin-right: 20px;
+  transition: color 0.3s ease;
+}
+
+.icon:hover {
+  color: #1976d2;
+  cursor: pointer;
+}
+
+.perfil {
+  display: flex;
+  align-items: center;
+}
+
+.left {
+  position: relative;
+}
+
+.bolita {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  position: absolute;
+  left: 8px;
+  top: 3px;
+  background-color: rgb(30, 191, 89);
+  border: 1px solid black;
+}
+
+.perfil__photo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid black;
+  margin-left: 10px;
+  overflow: hidden;
+}
+
+.nav{
+  display: flex;
+  gap: 50px;
+}
+
+.nav__item a {
+  font-size: 15px;
+  color: #1C4786;
+  font-weight: bold;
+  text-decoration: none;
+  position: relative;
+  padding: 10px;
+  transition: color 0.3s ease; /* Transición del color */
+}
+.nav__item a::after {
+  content: '';
+  position: absolute;
+  bottom: 0; /* Aparece justo debajo del texto */
+  left: 0;
+  width: 0; /* Comienza con un ancho de 0 */
+  height: 2px; /* Grosor de la línea */
+  background-color: #1C4786; /* Color del subrayado */
+  transition: width 0.3s ease; /* Anima el ancho */
+}
+
+.nav__item a:hover {
+  color: #1976d2;
+}
+
+.nav__item a:hover::after {
+  width: 100%;
+}
+/* Botón de Redirección */
+.auth-button-redirect {
+  background-color: #f0f0f0;
+  color: #1976d2;
+  border: none;
+  border-radius: 25px;
+  padding: 11px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  left: 200px;
+  gap: 8px;
+  transition: background-color 0.3s;
+}
+
+.auth-button-redirect:hover {
+  background-color: #e7e7e7;
+}
+
+.auth-icon {
+  font-size: 20px;
+}
+
+/* Efectos para pantallas más pequeñas */
+@media (max-width: 900px) {
+  .header {
+    justify-content: space-around;
+    padding: 0 10px;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .menu-container {
+    gap: 10px;
+  }
+
+  .auth-button-redirect {
+    font-size: 14px;
+    padding: 0.3em 1em;
+  }
+}
+
+.logouser{
+  display: flex;
+  width: 5%;
+  justify-content: center;
+  border: none;
+  background: none;
+  border-radius: 10px;
+}
+
+button:hover {
+  opacity: 0.8;
+  background-color: #f0f0f0;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -320px; /* Oculta el sidebar fuera de la vista */
+  width: 300px;
+  height: 35%;
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  transition: right 0.3s ease;
+  z-index: 1000;
+}
+
+/* Activar el sidebar */
+.sidebar.active {
+  right: 7%;
+}
+
+/* Botón de cierre */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  color: #333;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Opciones del sidebar */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  margin: 20px 0;
+}
+
+.sidebar ul li a {
+  color: #333;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.sidebar ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Botón para abrir el sidebar */
+.open-sidebar-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #333;
+  color: #fff;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1001;
+}

@@ -1,0 +1,41 @@
+<header class="header">
+  <div class="icon">
+    <i class="fa fa-expand icon--size" aria-hidden="true" (click)="maximizeAction()"></i>
+  </div>
+
+  <div class="logo">
+    <img src="assets/header2.png" alt="Logo">
+  </div>
+
+  <nav class="menu-container">
+    <ul class="nav">
+      <li *ngFor="let menu of menus" class="nav__item">
+        <a [routerLink]="menu.link" (click)="toggleSubMenu(menu)">
+          <span>{{ menu.name }}</span>
+        </a>
+        <ul class="subnav" *ngIf="menu.submenu && menu.open">
+          <li *ngFor="let submenuItem of menu.submenu">
+            <a [routerLink]="submenuItem.link">
+              {{ submenuItem.name }}
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <button class="logouser" (click)="toggleSidebar()">
+    <img src="assets/user.png" alt="logouser">
+  </button>
+  <!-- <button (click)="redirectToAuth()" class="auth-button-redirect">
+    <i class="fas fa-sign-out-alt auth-icon"></i> Cerrar Sesión
+  </button> -->
+</header>
+<div class="sidebar" [class.active]="sidebarOpen">
+  <button class="close-btn" (click)="toggleSidebar()">×</button>
+  <ul>
+    <li><a href="#">Ver Datos</a></li>
+    <li><a href="#">Cambiar Contraseña</a></li>
+    <li><a href="#">Actualizar Plan</a></li>
+    <li><a href="#">Cerrar Sesion</a></li>
+  </ul>
+</div>

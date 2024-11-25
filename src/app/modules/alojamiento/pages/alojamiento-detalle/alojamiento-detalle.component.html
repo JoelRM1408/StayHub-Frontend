@@ -1,0 +1,47 @@
+<div class="contenedor">
+  <div class="cont">
+    <div class="cont1">
+      <img [src]="alojamiento?.image1" class="img-a" alt="">
+    </div>
+    <div class="cont2">
+      <div class="cont3">
+        <img [src]="alojamiento?.image1" class="img-a" alt="">
+      </div>
+      <div class="cont4">
+        <img [src]="alojamiento?.image1" class="img-a" alt="">
+      </div>
+    </div>
+  </div>
+  <div class="conte">
+    <div class="conte1">
+      <div class="conte3">
+        <h2 class="title">{{ alojamiento?.nombre }}</h2>
+        <p class="precio">S/ {{ alojamiento?.precio }}</p>
+      </div>
+      <div class="conte4">
+        <h4 class="desc">{{ alojamiento?.desc }}</h4>
+        <h3 class="dir">{{ alojamiento?.direccion?.direccion }}</h3>
+      </div>
+    </div>
+    <div class="conte2">
+      <h5 class="serv">Servicios</h5>
+      <div class="conte5">
+        <div class="conte6" *ngFor="let servicio of servicios">
+          <div class="cont-name">
+            <div class="name-serv">{{ servicio.name }}</div>
+          </div>
+          <div class="des-serv">{{ servicio.desc }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="imgmapa">
+    <img src="assets/verdirec.png" class="img-a" alt="">
+  </div>
+  <div class="footer">
+    <button type="submit" class="btn-wsp" >
+      Contactar por WhatsApp
+      <img src="assets/wsp.png" alt="" class="wsp">
+    </button>
+  </div>
+</div>

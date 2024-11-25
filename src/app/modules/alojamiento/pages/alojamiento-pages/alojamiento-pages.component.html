@@ -1,0 +1,60 @@
+
+<div class="header">
+  <div class="sombra">
+    <div class="mincont">
+      <div class="htitle">
+        <h1>Encuentra el lugar ideal para crear nuevas experiencias</h1>
+      </div>
+      <div class="busc">
+        <form class="buscador">
+          <select formControlName="categoria" class="select" id="categoria" >
+            <option value=""disabled selected>Categoria</option>
+            <option *ngFor="let Categoria of categorias" [value]="Categoria.idcategoria">
+              {{ Categoria.name }}
+            </option>
+          </select>
+          <input type="text" placeholder="¿Que estamos buscando?" formControlName="lastname">
+          <button type="submit" (click)="showModal()" class="btn-ser" >Servicios</button>
+          <button type="submit" class="btn-bus" >Buscar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-card">
+  <div class="card" *ngFor="let alojamiento of alojamientos">
+    <div class="img">
+      <img [src]="alojamiento.image1" id="img-a" alt="">
+    </div>
+    <div class="contenido">
+      <div class="cont1">
+        <h2 class="title">{{ alojamiento.nombre }}</h2>
+        <p class="precio">S/ {{ alojamiento.precio }}</p>
+      </div>
+      <div class="cont2">
+        <h3 class="dir">{{ alojamiento.direccion.direccion }}</h3>
+        <h4 class="desc">{{ alojamiento.desc }}</h4>
+      </div>
+      <div class="cont3">
+        <div class="cont4">
+          <div class="etiqueta">Destacado</div>
+        </div>
+        <button type="submit" class="btn-vm" [routerLink]="['/home/alojamientos/detalle', alojamiento.idalojamiento]">Ver mas</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" [ngClass]="{ 'show': isModalVisible }" (click)="onModalBackgroundClick($event)" >
+  <div class="modal-content">
+    <span class="close" (click)="hideModal()">&times;</span>
+    <h2 class="modal-serv">Servicios</h2>
+    <div class="modal-body">
+      <div class="sv" *ngFor="let servicio of servicios">
+        <input class="check" type="checkbox" />{{ servicio.name }}
+      </div>
+    </div>
+    <button class="apply-btn" (click)="applyFilters()">Aplicar</button>
+  </div>
+</div>
