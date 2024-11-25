@@ -9,7 +9,7 @@ h1{
   width: 100%;
   height: 70vh; /* Ocupa el 70% de la ventana */
   background-size: cover;
-  background-image: url('/assets/gifmapa.gif');
+  background-image: url('https://firebasestorage.googleapis.com/v0/b/fluflu-db001.appspot.com/o/gifmapa.gif?alt=media&token=c6ac6488-2bd1-4b90-bbb8-395663bf15a5');
   display: flex;
   align-items: center;
   justify-content: center;
